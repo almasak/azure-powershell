@@ -72,6 +72,8 @@ jobs:
       branchName: 'refs/heads/internal/release'
       artifactName: 'artifacts'
       targetPath: $(Pipeline.Workspace)
+      itemPattern: 'drop_stage_Release/artifacts/**'
+
 
   - task: DownloadPipelineArtifact@2
     condition: and(succeeded(), ne(variables['skipLatest'], 'true'), eq(variables['GalleryName'], 'Sign'), ne(variables['PipelineBuildId'], ''))
@@ -84,6 +86,8 @@ jobs:
       pipelineId: $(PipelineBuildId)
       artifactName: 'artifacts'
       targetPath: $(Pipeline.Workspace)
+      itemPattern: 'drop_stage_Release/artifacts/**'
+
 
   - task: PowerShell@2
     condition: and(succeeded(), ne(variables['skipLatest'], 'true'), ne(variables['GalleryName'], 'PSGallery'))
