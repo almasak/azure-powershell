@@ -1,5 +1,5 @@
 ---
-external help file: Az.NeonPostgres-help.xml
+external help file:
 Module Name: Az.NeonPostgres
 online version: https://learn.microsoft.com/powershell/module/az.neonpostgres/remove-azneonpostgresproject
 schema: 2.0.0
@@ -15,21 +15,19 @@ Delete a Project
 ### Delete (Default)
 ```
 Remove-AzNeonPostgresProject -Name <String> -OrganizationName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### DeleteViaIdentityOrganization
-```
-Remove-AzNeonPostgresProject -Name <String> -OrganizationInputObject <INeonPostgresIdentity>
- [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-AzNeonPostgresProject -InputObject <INeonPostgresIdentity> [-DefaultProfile <PSObject>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### DeleteViaIdentityOrganization
+```
+Remove-AzNeonPostgresProject -Name <String> -OrganizationInputObject <INeonPostgresIdentity>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,27 +35,12 @@ Delete a Project
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: AzNeonPostgresProject
 ```powershell
-{{ Add code here }}
+Remove-AzNeonPostgresProject -SubscriptionId a81c0054-6c92-41aa-a235-4f9f98f917c6 -ResourceGroupName "almas-rg" -OrganizationName "exampleOrg" -ProjectName "exampleProject"
 ```
 
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
+This command deletes a Neon project
 
 ## PARAMETERS
 
@@ -229,3 +212,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

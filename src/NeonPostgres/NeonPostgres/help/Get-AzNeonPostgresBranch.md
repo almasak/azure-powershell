@@ -1,5 +1,5 @@
 ---
-external help file: Az.NeonPostgres-help.xml
+external help file:
 Module Name: Az.NeonPostgres
 online version: https://learn.microsoft.com/powershell/module/az.neonpostgres/get-azneonpostgresbranch
 schema: 2.0.0
@@ -15,27 +15,13 @@ Get a Branch
 ### List (Default)
 ```
 Get-AzNeonPostgresBranch -OrganizationName <String> -ProjectName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
- [<CommonParameters>]
-```
-
-### GetViaIdentityProject
-```
-Get-AzNeonPostgresBranch -Name <String> -ProjectInputObject <INeonPostgresIdentity>
- [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### GetViaIdentityOrganization
-```
-Get-AzNeonPostgresBranch -Name <String> -ProjectName <String> -OrganizationInputObject <INeonPostgresIdentity>
- [-DefaultProfile <PSObject>] [<CommonParameters>]
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-AzNeonPostgresBranch -Name <String> -OrganizationName <String> -ProjectName <String>
- -ResourceGroupName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+ -ResourceGroupName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -44,32 +30,33 @@ Get-AzNeonPostgresBranch -InputObject <INeonPostgresIdentity> [-DefaultProfile <
  [<CommonParameters>]
 ```
 
+### GetViaIdentityOrganization
+```
+Get-AzNeonPostgresBranch -Name <String> -OrganizationInputObject <INeonPostgresIdentity> -ProjectName <String>
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentityProject
+```
+Get-AzNeonPostgresBranch -Name <String> -ProjectInputObject <INeonPostgresIdentity>
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Get a Branch
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: AzNeonPostgresBranch
 ```powershell
-{{ Add code here }}
+Get-AzNeonPostgresBranch -SubscriptionId a81c0054-6c92-41aa-a235-4f9f98f917c6 -ResourceGroupName "almas-rg" -OrganizationName "exampleOrg" -ProjectName "exampleProject"
 ```
 
 ```output
 {{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
+This command will list the branches within a Neon project
 
 ## PARAMETERS
 
@@ -109,7 +96,7 @@ The name of the Branch
 
 ```yaml
 Type: System.String
-Parameter Sets: GetViaIdentityProject, GetViaIdentityOrganization, Get
+Parameter Sets: Get, GetViaIdentityOrganization, GetViaIdentityProject
 Aliases: BranchName
 
 Required: True
@@ -139,7 +126,7 @@ Name of the Neon Organizations resource
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -169,7 +156,7 @@ The name of the Project
 
 ```yaml
 Type: System.String
-Parameter Sets: List, GetViaIdentityOrganization, Get
+Parameter Sets: Get, GetViaIdentityOrganization, List
 Aliases:
 
 Required: True
@@ -185,7 +172,7 @@ The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -201,7 +188,7 @@ The value must be an UUID.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
@@ -225,3 +212,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

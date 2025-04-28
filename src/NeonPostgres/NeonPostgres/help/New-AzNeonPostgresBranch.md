@@ -1,5 +1,5 @@
 ---
-external help file: Az.NeonPostgres-help.xml
+external help file:
 Module Name: Az.NeonPostgres
 online version: https://learn.microsoft.com/powershell/module/az.neonpostgres/new-azneonpostgresbranch
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-AzNeonPostgresBranch
 
 ## SYNOPSIS
-create a Branch
+Create a Branch
 
 ## SYNTAX
 
@@ -19,49 +19,39 @@ New-AzNeonPostgresBranch -Name <String> -OrganizationName <String> -ProjectName 
  [-Database <IModelsNeonDatabaseProperties[]>] [-DatabaseName <String>]
  [-Endpoint <IModelsEndpointProperties[]>] [-EntityName <String>] [-ParentId <String>] [-ProjectId <String>]
  [-Role <IModelsNeonRoleProperties[]>] [-RoleName <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaJsonFilePath
 ```
 New-AzNeonPostgresBranch -Name <String> -OrganizationName <String> -ProjectName <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] -JsonFilePath <String> [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
+ -ResourceGroupName <String> -JsonFilePath <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaJsonString
 ```
 New-AzNeonPostgresBranch -Name <String> -OrganizationName <String> -ProjectName <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] -JsonString <String> [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
+ -ResourceGroupName <String> -JsonString <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-create a Branch
+Create a Branch
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: AzNeonPostgresBranch
 ```powershell
-{{ Add code here }}
+New-AzNeonPostgresBranch -SubscriptionId a81c0054-6c92-41aa-a235-4f9f98f917c6 -ResourceGroupName "almas-rg" -OrganizationName "exampleOrg" -ProjectName "exampleproject" -BranchName "examplebranch"
 ```
 
 ```output
 {{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
-{{ Add description here }}
+This command will create a new branch for your Neon project
 
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -396,3 +386,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

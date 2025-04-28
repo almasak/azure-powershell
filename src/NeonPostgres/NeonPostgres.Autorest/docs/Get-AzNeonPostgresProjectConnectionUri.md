@@ -74,27 +74,16 @@ Action to retrieve the connection URI for the Neon Database.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: AzNeonPostgresProjectConnectionUri
 ```powershell
-{{ Add code here }}
+Get-AzNeonPostgresProjectConnectionUri -SubscriptionId a81c0054-6c92-41aa-a235-4f9f98f917c6 -ResourceGroupName "almas-rg" -OrganizationName "exampleOrg" -ProjectName "exampleproject" -ProjectId "sample_project_id" -BranchId "sample_branch_name" -DatabaseName "sample_db" -RoleName "sample_role" -EndpointId "sample_endpoint"
 ```
 
 ```output
 {{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
+This command will get Project Connection URI.
 
 ## PARAMETERS
 

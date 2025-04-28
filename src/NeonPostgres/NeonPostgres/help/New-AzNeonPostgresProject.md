@@ -1,5 +1,5 @@
 ---
-external help file: Az.NeonPostgres-help.xml
+external help file:
 Module Name: Az.NeonPostgres
 online version: https://learn.microsoft.com/powershell/module/az.neonpostgres/new-azneonpostgresproject
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-AzNeonPostgresProject
 
 ## SYNOPSIS
-create a Project
+Create a Project
 
 ## SYNTAX
 
@@ -23,49 +23,38 @@ New-AzNeonPostgresProject -Name <String> -OrganizationName <String> -ResourceGro
  [-DefaultEndpointSettingAutoscalingLimitMinCu <Single>] [-Endpoint <IModelsEndpointProperties[]>]
  [-EntityName <String>] [-HistoryRetention <Int32>] [-PgVersion <Int32>] [-RegionId <String>]
  [-Role <IModelsNeonRoleProperties[]>] [-Storage <Int64>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaJsonFilePath
 ```
 New-AzNeonPostgresProject -Name <String> -OrganizationName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] -JsonFilePath <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ -JsonFilePath <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaJsonString
 ```
 New-AzNeonPostgresProject -Name <String> -OrganizationName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] -JsonString <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ -JsonString <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-create a Project
+Create a Project
 
 ## EXAMPLES
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+ New-AzNeonPostgresProject -SubscriptionId a81c0054-6c92-41aa-a235-4f9f98f917c6 -ResourceGroupName "almas-rg" -OrganizationName "exampleOrg" -ProjectName "exampleproject1" -EntityName "exampleproject1" -RegionId "Central US EUAP" -PgVersion 17
 ```
 
 ```output
 {{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
+Create a new Neon project.
 
 ## PARAMETERS
 
@@ -550,3 +539,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

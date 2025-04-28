@@ -1,5 +1,5 @@
 ---
-external help file: Az.NeonPostgres-help.xml
+external help file:
 Module Name: Az.NeonPostgres
 online version: https://learn.microsoft.com/powershell/module/az.neonpostgres/get-azneonpostgresprojectconnectionuri
 schema: 2.0.0
@@ -17,58 +17,56 @@ Action to retrieve the connection URI for the Neon Database.
 Get-AzNeonPostgresProjectConnectionUri -OrganizationName <String> -ProjectName <String>
  -ResourceGroupName <String> [-SubscriptionId <String[]>] [-BranchId <String>] [-DatabaseName <String>]
  [-EndpointId <String>] [-IsPooled] [-ProjectId <String>] [-RoleName <String>] [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### GetViaJsonString
-```
-Get-AzNeonPostgresProjectConnectionUri -OrganizationName <String> -ProjectName <String>
- -ResourceGroupName <String> [-SubscriptionId <String[]>] -JsonString <String> [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### GetViaJsonFilePath
-```
-Get-AzNeonPostgresProjectConnectionUri -OrganizationName <String> -ProjectName <String>
- -ResourceGroupName <String> [-SubscriptionId <String[]>] -JsonFilePath <String> [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-AzNeonPostgresProjectConnectionUri -OrganizationName <String> -ProjectName <String>
- -ResourceGroupName <String> [-SubscriptionId <String[]>]
- -ConnectionUriParameter <IModelsConnectionUriProperties> [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ -ResourceGroupName <String> -ConnectionUriParameter <IModelsConnectionUriProperties>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentityOrganizationExpanded
+### GetViaIdentity
 ```
-Get-AzNeonPostgresProjectConnectionUri -ProjectName <String> -OrganizationInputObject <INeonPostgresIdentity>
- [-BranchId <String>] [-DatabaseName <String>] [-EndpointId <String>] [-IsPooled] [-ProjectId <String>]
- [-RoleName <String>] [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
+Get-AzNeonPostgresProjectConnectionUri -InputObject <INeonPostgresIdentity>
+ -ConnectionUriParameter <IModelsConnectionUriProperties> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
-```
-
-### GetViaIdentityOrganization
-```
-Get-AzNeonPostgresProjectConnectionUri -ProjectName <String> -OrganizationInputObject <INeonPostgresIdentity>
- -ConnectionUriParameter <IModelsConnectionUriProperties> [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
 Get-AzNeonPostgresProjectConnectionUri -InputObject <INeonPostgresIdentity> [-BranchId <String>]
  [-DatabaseName <String>] [-EndpointId <String>] [-IsPooled] [-ProjectId <String>] [-RoleName <String>]
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentityOrganization
 ```
-Get-AzNeonPostgresProjectConnectionUri -InputObject <INeonPostgresIdentity>
- -ConnectionUriParameter <IModelsConnectionUriProperties> [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-AzNeonPostgresProjectConnectionUri -OrganizationInputObject <INeonPostgresIdentity> -ProjectName <String>
+ -ConnectionUriParameter <IModelsConnectionUriProperties> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### GetViaIdentityOrganizationExpanded
+```
+Get-AzNeonPostgresProjectConnectionUri -OrganizationInputObject <INeonPostgresIdentity> -ProjectName <String>
+ [-BranchId <String>] [-DatabaseName <String>] [-EndpointId <String>] [-IsPooled] [-ProjectId <String>]
+ [-RoleName <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### GetViaJsonFilePath
+```
+Get-AzNeonPostgresProjectConnectionUri -OrganizationName <String> -ProjectName <String>
+ -ResourceGroupName <String> -JsonFilePath <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### GetViaJsonString
+```
+Get-AzNeonPostgresProjectConnectionUri -OrganizationName <String> -ProjectName <String>
+ -ResourceGroupName <String> -JsonString <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -76,27 +74,16 @@ Action to retrieve the connection URI for the Neon Database.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: AzNeonPostgresProjectConnectionUri
 ```powershell
-{{ Add code here }}
+Get-AzNeonPostgresProjectConnectionUri -SubscriptionId a81c0054-6c92-41aa-a235-4f9f98f917c6 -ResourceGroupName "almas-rg" -OrganizationName "exampleOrg" -ProjectName "exampleproject" -ProjectId "sample_project_id" -BranchId "sample_branch_name" -DatabaseName "sample_db" -RoleName "sample_role" -EndpointId "sample_endpoint"
 ```
 
 ```output
 {{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
+This command will get Project Connection URI.
 
 ## PARAMETERS
 
@@ -105,7 +92,7 @@ Branch Id associated with this connection
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpanded, GetViaIdentityOrganizationExpanded, GetViaIdentityExpanded
+Parameter Sets: GetExpanded, GetViaIdentityExpanded, GetViaIdentityOrganizationExpanded
 Aliases:
 
 Required: False
@@ -120,7 +107,7 @@ Connection uri parameters for the associated database
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.NeonPostgres.Models.IModelsConnectionUriProperties
-Parameter Sets: Get, GetViaIdentityOrganization, GetViaIdentity
+Parameter Sets: Get, GetViaIdentity, GetViaIdentityOrganization
 Aliases:
 
 Required: True
@@ -135,7 +122,7 @@ Database name associated with this connection
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpanded, GetViaIdentityOrganizationExpanded, GetViaIdentityExpanded
+Parameter Sets: GetExpanded, GetViaIdentityExpanded, GetViaIdentityOrganizationExpanded
 Aliases:
 
 Required: False
@@ -166,7 +153,7 @@ the endpoint Id with this connection
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpanded, GetViaIdentityOrganizationExpanded, GetViaIdentityExpanded
+Parameter Sets: GetExpanded, GetViaIdentityExpanded, GetViaIdentityOrganizationExpanded
 Aliases:
 
 Required: False
@@ -181,7 +168,7 @@ Identity Parameter
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.NeonPostgres.Models.INeonPostgresIdentity
-Parameter Sets: GetViaIdentityExpanded, GetViaIdentity
+Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -196,7 +183,7 @@ Indicates if the connection is pooled
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: GetExpanded, GetViaIdentityOrganizationExpanded, GetViaIdentityExpanded
+Parameter Sets: GetExpanded, GetViaIdentityExpanded, GetViaIdentityOrganizationExpanded
 Aliases:
 
 Required: False
@@ -241,7 +228,7 @@ Identity Parameter
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.NeonPostgres.Models.INeonPostgresIdentity
-Parameter Sets: GetViaIdentityOrganizationExpanded, GetViaIdentityOrganization
+Parameter Sets: GetViaIdentityOrganization, GetViaIdentityOrganizationExpanded
 Aliases:
 
 Required: True
@@ -256,7 +243,7 @@ Name of the Neon Organizations resource
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpanded, GetViaJsonString, GetViaJsonFilePath, Get
+Parameter Sets: Get, GetExpanded, GetViaJsonFilePath, GetViaJsonString
 Aliases:
 
 Required: True
@@ -271,7 +258,7 @@ Project Id associated with this connection
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpanded, GetViaIdentityOrganizationExpanded, GetViaIdentityExpanded
+Parameter Sets: GetExpanded, GetViaIdentityExpanded, GetViaIdentityOrganizationExpanded
 Aliases:
 
 Required: False
@@ -286,7 +273,7 @@ The name of the Project
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpanded, GetViaJsonString, GetViaJsonFilePath, Get, GetViaIdentityOrganizationExpanded, GetViaIdentityOrganization
+Parameter Sets: Get, GetExpanded, GetViaIdentityOrganization, GetViaIdentityOrganizationExpanded, GetViaJsonFilePath, GetViaJsonString
 Aliases:
 
 Required: True
@@ -302,7 +289,7 @@ The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpanded, GetViaJsonString, GetViaJsonFilePath, Get
+Parameter Sets: Get, GetExpanded, GetViaJsonFilePath, GetViaJsonString
 Aliases:
 
 Required: True
@@ -317,7 +304,7 @@ The role name used for authentication
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpanded, GetViaIdentityOrganizationExpanded, GetViaIdentityExpanded
+Parameter Sets: GetExpanded, GetViaIdentityExpanded, GetViaIdentityOrganizationExpanded
 Aliases:
 
 Required: False
@@ -333,7 +320,7 @@ The value must be an UUID.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: GetExpanded, GetViaJsonString, GetViaJsonFilePath, Get
+Parameter Sets: Get, GetExpanded, GetViaJsonFilePath, GetViaJsonString
 Aliases:
 
 Required: False
@@ -390,3 +377,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

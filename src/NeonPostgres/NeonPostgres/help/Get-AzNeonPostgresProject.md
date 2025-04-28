@@ -1,5 +1,5 @@
 ---
-external help file: Az.NeonPostgres-help.xml
+external help file:
 Module Name: Az.NeonPostgres
 online version: https://learn.microsoft.com/powershell/module/az.neonpostgres/get-azneonpostgresproject
 schema: 2.0.0
@@ -18,17 +18,10 @@ Get-AzNeonPostgresProject -OrganizationName <String> -ResourceGroupName <String>
  [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### GetViaIdentityOrganization
-```
-Get-AzNeonPostgresProject -Name <String> -OrganizationInputObject <INeonPostgresIdentity>
- [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
 ### Get
 ```
 Get-AzNeonPostgresProject -Name <String> -OrganizationName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -37,32 +30,30 @@ Get-AzNeonPostgresProject -InputObject <INeonPostgresIdentity> [-DefaultProfile 
  [<CommonParameters>]
 ```
 
+### GetViaIdentityOrganization
+```
+Get-AzNeonPostgresProject -Name <String> -OrganizationInputObject <INeonPostgresIdentity>
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Get a Project
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: AzNeonPostgresProject
 ```powershell
-{{ Add code here }}
+Get-AzNeonPostgresProject -SubscriptionId a81c0054-6c92-41aa-a235-4f9f98f917c6 -ResourceGroupName "almas-rg" -OrganizationName "exampleOrg"
 ```
 
 ```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
+PS C:\April-2025\azure-powershell\src\NeonPostgres\NeonPostgres.Autorest [Az.NeonPostgres]> Get-AzNeonPostgresProject -SubscriptionId a81c0054-6c92-41aa-a235-4f9f98f917c6 -ResourceGroupName "almas-rg" -OrganizationName "exampleOrg"
+
+Name              SystemDataCreatedAt    SystemDataCreatedBy    SystemDataCreatedByType    SystemDataLastModifiedAt    SystemDataLastModifiedBy    SystemDataLastModifiedByType    ResourceGroupName
+----              -------------------    -------------------    -----------------------    ------------------------    ------------------------    ----------------------------    -----------------
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
+This command will get all projct details for a Neon resource
 
 ## PARAMETERS
 
@@ -102,7 +93,7 @@ The name of the Project
 
 ```yaml
 Type: System.String
-Parameter Sets: GetViaIdentityOrganization, Get
+Parameter Sets: Get, GetViaIdentityOrganization
 Aliases: ProjectName
 
 Required: True
@@ -132,7 +123,7 @@ Name of the Neon Organizations resource
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -148,7 +139,7 @@ The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -164,7 +155,7 @@ The value must be an UUID.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
@@ -188,3 +179,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

@@ -1,5 +1,5 @@
 ---
-external help file: Az.NeonPostgres-help.xml
+external help file:
 Module Name: Az.NeonPostgres
 online version: https://learn.microsoft.com/powershell/module/az.neonpostgres/remove-azneonpostgresbranch
 schema: 2.0.0
@@ -15,28 +15,26 @@ Delete a Branch
 ### Delete (Default)
 ```
 Remove-AzNeonPostgresBranch -Name <String> -OrganizationName <String> -ProjectName <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### DeleteViaIdentityProject
-```
-Remove-AzNeonPostgresBranch -Name <String> -ProjectInputObject <INeonPostgresIdentity>
- [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### DeleteViaIdentityOrganization
-```
-Remove-AzNeonPostgresBranch -Name <String> -ProjectName <String>
- -OrganizationInputObject <INeonPostgresIdentity> [-DefaultProfile <PSObject>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ -ResourceGroupName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-AzNeonPostgresBranch -InputObject <INeonPostgresIdentity> [-DefaultProfile <PSObject>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### DeleteViaIdentityOrganization
+```
+Remove-AzNeonPostgresBranch -Name <String> -OrganizationInputObject <INeonPostgresIdentity>
+ -ProjectName <String> [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### DeleteViaIdentityProject
+```
+Remove-AzNeonPostgresBranch -Name <String> -ProjectInputObject <INeonPostgresIdentity>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,27 +42,12 @@ Delete a Branch
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Remove-AzNeonPostgresBranch
 ```powershell
-{{ Add code here }}
+Remove-AzNeonPostgresBranch -SubscriptionId a81c0054-6c92-41aa-a235-4f9f98f917c6 -ResourceGroupName "almas-rg" -OrganizationName "exampleOrg" -ProjectName "exampleproject" -BranchName "examplebranch"
 ```
 
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
+This command deletes a branch
 
 ## PARAMETERS
 
@@ -104,7 +87,7 @@ The name of the Branch
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, DeleteViaIdentityProject, DeleteViaIdentityOrganization
+Parameter Sets: Delete, DeleteViaIdentityOrganization, DeleteViaIdentityProject
 Aliases: BranchName
 
 Required: True
@@ -266,3 +249,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
